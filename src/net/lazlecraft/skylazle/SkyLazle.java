@@ -21,8 +21,8 @@ public class SkyLazle extends JavaPlugin {
         if (!(sender instanceof Player)) {
             sender.sendMessage("You may not use any SkyLazle commands, Console!");
             return false;
-        }
-             
+        }    
+        
     	Player p = (Player)sender;
         if ((commandLabel.equalsIgnoreCase("setvsspawn")) && (sender.hasPermission("skylazle.set.vsspawn.doesnt.really.freaking.matter.what.i.put.in.here.trolololollololo"))) {
         	Location l = p.getLocation();
@@ -33,6 +33,7 @@ public class SkyLazle extends JavaPlugin {
         	getConfig().set("vPitch", Float.valueOf(l.getPitch()));
         	getConfig().set("vWorld", String.valueOf(l.getWorld().getName()));
         	this.saveConfig();
+        	this.reloadConfig();
         	p.sendMessage(ChatColor.GREEN + "Void Spawn set!");
         }
         return false;

@@ -16,8 +16,8 @@ public class voidsickness implements Listener {
 	public static SkyLazle plugin;
 	
 	@EventHandler
-	public void onPlayerMove(PlayerMoveEvent e) {
-	    Player p = e.getPlayer();
+	public void onPlayerMove(PlayerMoveEvent ev) {
+	    Player p = ev.getPlayer();
 	    if (p.getLocation().getBlockY() < 0) {
 	      spawn(p);
 	      p.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 1200, 0));
